@@ -16,7 +16,8 @@ jobs:
           username: ubuntu
           key: ${{ secrets.AWS_SSH_KEY }}
           script: |
-            cd /var/www/react-app
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+            cd ~/react-app
             git pull origin main
             npm install
             npm run build
