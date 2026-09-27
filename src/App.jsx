@@ -25,11 +25,11 @@ useEffect(() => {
 	  <h4>CI/CD pipline is also integrated in this now</h4>
           <p>Message: {backendData.message}</p>
           <small>Server Time: {new Date(backendData.timestamp).toLocaleString()}</small>
-        </div>
+        <p style="color: green; font-size: 24px; text-align: center; font-weight: bold; margin-top: 20px;">🔥 GitHub Actions CI/CD is fully Functional!</p></div>
       ) : (
         <p>Connecting to Express Backend...</p>
       )}
-    </div>
+    <p style="color: green; font-size: 24px; text-align: center; font-weight: bold; margin-top: 20px;">🔥 GitHub Actions CI/CD is fully Functional!</p></div>
   );
 }
 
