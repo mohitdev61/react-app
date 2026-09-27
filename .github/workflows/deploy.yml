@@ -18,6 +18,8 @@ jobs:
           script: |
             ssh-keyscan -H github.com >> ~/.ssh/known_hosts
             cd ~/react-app
-            git pull origin main
+            git config pull.rebase false
+            git fetch --all
+            git reset --hard origin/main
             npm install
             npm run build
