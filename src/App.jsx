@@ -22,6 +22,7 @@ useEffect(() => {
       {backendData ? (
         <div style={{ background: '#e0ffe0', padding: '15px', borderRadius: '8px' }}>
           <h3>Backend Status: {backendData.status} ✅</h3>
+	  <h4>CI/CD pipline is also integrated in this now</h4>
           <p>Message: {backendData.message}</p>
           <small>Server Time: {new Date(backendData.timestamp).toLocaleString()}</small>
         </div>
