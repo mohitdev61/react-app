@@ -3,11 +3,9 @@ import { useEffect, useState } from 'react';
 function App() {
   const [backendData, setBackendData] = useState(null);
 useEffect(() => {
-  // पूरे URL के साथ फेच करो ताकि कोई कन्फ्यूजन न रहे
-  fetch('http://65.0.178.205/api/') 
+  fetch('/api/') 
     .then(res => res.json())
     .then(data => {
-      console.log("Backend response:", data); // यह कंसोल में डेटा प्रिंट करेगा
       setBackendData(data);
     })
     .catch(err => {
