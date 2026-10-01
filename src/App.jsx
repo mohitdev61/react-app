@@ -10,7 +10,7 @@ useEffect(() => {
     })
     .catch(err => {
       console.error("Fetch error:", err);
-      setMessage("Error connecting to backend ❌");
+      setMessage("Error connecting to backend... ❌");
     });
 }, []);
 
