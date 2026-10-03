@@ -23,11 +23,7 @@ jobs:
             git reset --hard origin/main
             npm install
             npm run build
-          # npm run build वाले स्टेप के ठीक नीचे इसे जोड़ें:
-      - name: Copy build to Nginx root
-          run: |
             sudo rm -rf /var/www/html/*
             sudo cp -r /home/ubuntu/react-app/dist/* /var/www/html/
             sudo systemctl daemon-reload
             sudo systemctl restart nginx
-
