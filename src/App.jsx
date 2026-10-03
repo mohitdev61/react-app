@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 function App() {
   const [backendData, setBackendData] = useState(null);
 useEffect(() => {
-  fetch('/') 
+  fetch('/api/') 
     .then(res => res.json())
     .then(data => {
       setBackendData(data);
