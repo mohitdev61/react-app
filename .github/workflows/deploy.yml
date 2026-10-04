@@ -17,13 +17,11 @@ jobs:
           key: ${{ secrets.AWS_SSH_KEY }}
           script: |
             ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-            cd ~/react-app
-            git config pull.rebase false
-            git fetch --all
-            git reset --hard origin/main
+            cd /home/ubuntu/react-app
+            git pull origin main
             npm install
             npm run build
             sudo rm -rf /var/www/html/*
-            sudo cp -r /home/ubuntu/react-app/dist/* /var/www/html/
-            sudo systemctl daemon-reload
+            sudo cp -r dist/* /var/www/html/
+            sudo chown -R www-data:www-data /var/www/html/
             sudo systemctl restart nginx

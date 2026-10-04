@@ -16,7 +16,7 @@ useEffect(() => {
 
   return (
     <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-      <h1>Child's Gaming Application Start</h1>
+      <h1>Testing Gaming Application Start</h1>
       {backendData ? (
         <div style={{ background: '#e0ffe0', padding: '15px', borderRadius: '8px' }}>
           <h3>Backend Status: {backendData.status} ✅</h3>
