@@ -47,7 +47,7 @@
 .section {
   width: min(1240px, 100%);
   margin: 0 auto;
-  padding: 115px 32px;
+  padding: 82px 32px;
 }
 
 .navbar {
@@ -157,7 +157,7 @@
   grid-template-columns: 1.03fr .97fr;
   align-items: center;
   gap: 60px;
-  padding-top: 85px;
+  padding-top: 55px;
 }
 
 .availability {
@@ -829,7 +829,7 @@
 }
 
 .hero {
-  min-height: 755px;
+  min-height: 650px;
   grid-template-columns: 1.02fr .98fr;
 }
 .hero-visual { min-height: 510px; }
@@ -1036,5 +1036,77 @@
 @media (max-width: 600px) {
   .profile-photo-frame {
     width: min(310px, 78%);
+  }
+}
+
+
+/* ===== Compact spacing + subtle candidate motion ===== */
+.hero {
+  min-height: 650px;
+  padding-top: 55px;
+  padding-bottom: 65px;
+}
+
+.section {
+  padding-top: 82px;
+  padding-bottom: 82px;
+}
+
+.resume-section {
+  padding-bottom: 82px;
+}
+
+.profile-photo-frame {
+  animation: candidateFloat 4.8s ease-in-out infinite;
+  transform-origin: 50% 58%;
+  will-change: transform;
+}
+
+.profile-photo {
+  animation: candidatePhotoFloat 4.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes candidateFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(2deg);
+  }
+  25% {
+    transform: translate3d(3px, -7px, 0) rotate(1deg);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0) rotate(-1.5deg);
+  }
+  75% {
+    transform: translate3d(-3px, -6px, 0) rotate(0.5deg);
+  }
+}
+
+@keyframes candidatePhotoFloat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.012); }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: auto;
+    padding-top: 48px;
+    padding-bottom: 45px;
+  }
+
+  .section {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .resume-section {
+    padding-bottom: 58px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-photo-frame,
+  .profile-photo {
+    animation: none;
   }
 }

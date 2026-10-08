@@ -1,5 +1,4 @@
 import { profile } from '../data/profile'
-import Reveal from '../components/ui/Reveal'
 
 export default function Resume() {
   return (
